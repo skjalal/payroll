@@ -1,0 +1,11 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+  endpoint:
+    metrics:
+      enabled: true
+spring:
+  application:
+    name: payroll

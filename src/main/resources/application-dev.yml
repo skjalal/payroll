@@ -1,0 +1,11 @@
+spring:
+  liquibase:
+    url: jdbc:postgresql://DEV_URL/testdb
+    user: DEV_USER
+    password: DEV_PASSWORD
+    change-log: classpath:/db/db.changelog-master.yml
+    enabled: true
+  r2dbc:
+    url: r2dbc:postgresql://DEV_URL/testdb
+    username: DEV_USER
+    password: DEV_PASSWORD

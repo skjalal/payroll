@@ -1,0 +1,130 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-department-table
+      author: JALAL
+      changes:
+        - createTable:
+            tableName: department
+            schemaName: public
+            columns:
+              - column:
+                  name: departmentid
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: department_pkey
+                    nullable: false
+              - column:
+                  name: departmentname
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: location
+                  type: TEXT
+              - column:
+                  name: createdby
+                  type: TEXT
+              - column:
+                  name: createddate
+                  type: TIMESTAMP
+              - column:
+                  name: updatedby
+                  type: TEXT
+              - column:
+                  name: updateddate
+                  type: TIMESTAMP
+  - changeSet:
+      id: create-employee-table
+      author: JALAL
+      changes:
+        - createTable:
+            tableName: employee
+            schemaName: public
+            columns:
+              - column:
+                  name: employeeid
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: employee_pkey
+                    nullable: false
+              - column:
+                  name: employeename
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: departmentid
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: dob
+                  type: TIMESTAMP
+              - column:
+                  name: address1
+                  type: TEXT
+              - column:
+                  name: address2
+                  type: TEXT
+              - column:
+                  name: city
+                  type: TEXT
+              - column:
+                  name: state
+                  type: TEXT
+              - column:
+                  name: createdby
+                  type: TEXT
+              - column:
+                  name: createddate
+                  type: TIMESTAMP
+              - column:
+                  name: updatedby
+                  type: TEXT
+              - column:
+                  name: updateddate
+                  type: TIMESTAMP
+  - changeSet:
+      id: create-payroll-table
+      author: JALAL
+      changes:
+        - createTable:
+            tableName: payroll
+            schemaName: public
+            columns:
+              - column:
+                  name: payrollid
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: payroll_pkey
+                    nullable: false
+              - column:
+                  name: employeeid
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payrolldate
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payrollamount
+                  type: NUMERIC(18,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: createdby
+                  type: TEXT
+              - column:
+                  name: createddate
+                  type: TIMESTAMP
+              - column:
+                  name: updatedby
+                  type: TEXT
+              - column:
+                  name: updateddate
+                  type: TIMESTAMP
